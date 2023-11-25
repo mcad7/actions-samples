@@ -2,6 +2,17 @@ name: Manual Workflow Dispatch
 
 on:
   workflow_dispatch:
+    # inputs for select environment
+    inputs:
+      environment:
+        description: "Environment to deploy to"
+        required: true
+        default: "dev"
+        # options for select environment
+        options:
+          - dev
+          - staging
+          - production
 
 jobs:
   build:
